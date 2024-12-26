@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://o6sxdpu2ge0y"]
+
+[ext_resource type="Script" path="res://components/area/area.gd" id="1_7nle5"]
+
+[node name="Area" type="Node2D"]
+script = ExtResource("1_7nle5")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 128, 0, 128, 96, 0, 96)
