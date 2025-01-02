@@ -6,49 +6,65 @@
 
 [node name="Area" parent="." instance=ExtResource("1_3nko4")]
 ownerPlayerIndex = 0
+buildingNumber = 3
 
 [node name="Area2" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(128, 0)
+buildingNumber = 2
 
 [node name="Area3" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(256, 0)
+buildingNumber = 1
 
 [node name="Area4" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(384, 0)
+buildingNumber = 1
 
 [node name="Area5" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(0, 96)
+buildingNumber = 3
 
 [node name="Area6" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(128, 96)
+buildingNumber = 2
 
 [node name="Area7" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(256, 96)
+buildingNumber = 1
 
 [node name="Area8" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(384, 96)
+buildingNumber = 2
 
 [node name="Area9" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(0, 192)
+buildingNumber = 2
 
 [node name="Area10" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(128, 192)
+buildingNumber = 1
 
 [node name="Area11" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(256, 192)
+buildingNumber = 2
 
 [node name="Area12" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(384, 192)
+buildingNumber = 3
 
 [node name="Area13" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(0, 288)
+buildingNumber = 1
 
 [node name="Area14" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(128, 288)
+buildingNumber = 1
 
 [node name="Area15" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(256, 288)
+buildingNumber = 2
 
 [node name="Area16" parent="." instance=ExtResource("1_3nko4")]
 position = Vector2(384, 288)
 ownerPlayerIndex = 1
+buildingNumber = 3

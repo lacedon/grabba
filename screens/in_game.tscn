@@ -1,23 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1i0yuutbfcd6"]
+[gd_scene load_steps=2 format=3 uid="uid://d1i0yuutbfcd6"]
 
-[ext_resource type="PackedScene" uid="uid://c8t0g2ij3oof0" path="res://components/game_state/game_state.tscn" id="1_lr5i6"]
-[ext_resource type="Script" path="res://types/player.gd" id="2_qg721"]
 [ext_resource type="PackedScene" uid="uid://daah24doevg1r" path="res://components/map_generator/map_generator.tscn" id="3_lm22e"]
-
-[sub_resource type="Resource" id="Resource_satx4"]
-script = ExtResource("2_qg721")
-name = "First"
-color = Color(0.302135, 0.480939, 0.87231, 1)
-
-[sub_resource type="Resource" id="Resource_cn57w"]
-script = ExtResource("2_qg721")
-name = "Second"
-color = Color(0.87, 0.3045, 0.3045, 1)
 
 [node name="InGame" type="Node2D"]
 
-[node name="GameState" parent="." instance=ExtResource("1_lr5i6")]
-players = Array[ExtResource("2_qg721")]([SubResource("Resource_satx4"), SubResource("Resource_cn57w")])
-
 [node name="MapGenerator" parent="." instance=ExtResource("3_lm22e")]
-position = Vector2(193.581, 217.181)
+position = Vector2(320, 125)

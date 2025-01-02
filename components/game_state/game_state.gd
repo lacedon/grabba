@@ -1,6 +1,9 @@
 extends Node
 
-@export var players: Array[GamePlayer] = []
+@export var players: Array[GamePlayer] = [
+	GamePlayer.new('First'),
+	GamePlayer.new('Second'),
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
