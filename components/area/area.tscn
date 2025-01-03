@@ -20,5 +20,5 @@ invert_border = 4.0
 
 [node name="BuildingIconPattern" type="Polygon2D" parent="."]
 color = Color(1, 0.934, 0.34, 1)
-invert_border = 2.0
-polygon = PackedVector2Array(4, 0, 8, 0, 12, 4, 12, 8, 8, 12, 4, 12, 0, 8, 0, 4)
+invert_border = 4.0
+polygon = PackedVector2Array(4, 0, 8, 0, 11, 1, 12, 4, 12, 8, 11, 11, 8, 12, 4, 12, 1, 11, 0, 8, 0, 4, 1, 1)
