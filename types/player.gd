@@ -9,3 +9,5 @@ func _init(_name: String, _color: Color = Color.TRANSPARENT):
   name = _name
   if _color == Color.TRANSPARENT:
     color = GameConstants.colors[randi_range(0, GameConstants.colors.size() - 1)]
+  else:
+    color = _color
