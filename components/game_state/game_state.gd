@@ -1,15 +1,12 @@
 extends Node
 
-@export var players: Array[GamePlayer] = [
-	GamePlayer.new('First'),
-	GamePlayer.new('Second'),
-]
+@export var players: Array[GamePlayer] = _createPlayers()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+static func _createPlayers() -> Array[GamePlayer]:
+	var firstPlayerColorIndex = randi_range(0, GameConstants.colors.size() - 1)
+	var secondPlayerColorIndex = (firstPlayerColorIndex + 1) % GameConstants.colors.size()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	return [
+		GamePlayer.new('First', GameConstants.colors[firstPlayerColorIndex]),
+		GamePlayer.new('Second', GameConstants.colors[secondPlayerColorIndex]),
+	]
