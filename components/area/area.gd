@@ -7,11 +7,11 @@ const AreaResource = preload("res://types/area_resource.gd")
 @export var buildings: Array[GameBuilding] = []
 @export var resources: Array[AreaResource] = []
 
-@onready var _visualBodyPolygon: AreaVisualPolygon = $VisualPolygon
-@onready var _buildingContainer: AreaBuildingManager = $Buildings
+@onready var _visualBody: AreaVisualPolygon = $VisualPolygon
+@onready var _buildingManager: AreaBuildingManager = $Buildings
+@onready var _reactivityBody: AreaReactivityBody = $ReactivityBody
 
 func _ready():
-	_visualBodyPolygon.prepare(ownerPlayerIndex)
-	var center: = _visualBodyPolygon.getCenter()
-
-	_buildingContainer.setBuildingIcons(center, buildingNumber)
+	_visualBody.prepare(ownerPlayerIndex)
+	_buildingManager.setBuildingIcons(_visualBody.getCenter(), buildingNumber)
+	_reactivityBody.setPolygons(_visualBody.getPolygons())

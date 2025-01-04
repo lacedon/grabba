@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1i0yuutbfcd6"]
+[gd_scene load_steps=3 format=3 uid="uid://d1i0yuutbfcd6"]
 
+[ext_resource type="PackedScene" uid="uid://b3rcakn7ft13" path="res://ui/in_game/in_game.tscn" id="2_k4quf"]
 [ext_resource type="PackedScene" uid="uid://daah24doevg1r" path="res://components/map_generator/map_generator.tscn" id="3_lm22e"]
 
-[node name="InGame" type="Node2D"]
+[node name="InGame" type="Node"]
 
 [node name="MapGenerator" parent="." instance=ExtResource("3_lm22e")]
 position = Vector2(56, 56)
+
+[node name="InGame" parent="." instance=ExtResource("2_k4quf")]
+visible = false

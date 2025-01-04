@@ -22,6 +22,9 @@ func setColor(ownerPlayerIndex: int) -> void:
 func getCenter() -> Vector2:
   return PolygonHelpers.calcPolygonCenter(_visualBodyPolygon)
 
+func getPolygons() -> PackedVector2Array:
+  return _visualBodyPolygon.polygon
+
 func prepare(ownerPlayerIndex: int = -1) -> void:
   setUpBorder()
   setColor(ownerPlayerIndex)
