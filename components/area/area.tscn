@@ -1,24 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://o6sxdpu2ge0y"]
+[gd_scene load_steps=4 format=3 uid="uid://o6sxdpu2ge0y"]
 
 [ext_resource type="Script" path="res://components/area/area.gd" id="1_7nle5"]
+[ext_resource type="PackedScene" uid="uid://cshupupifqerg" path="res://components/area/visual_polygon/visual_polygon.tscn" id="2_a5ovh"]
+[ext_resource type="PackedScene" uid="uid://sgknel74vgm" path="res://components/area/buildings/buildings.tscn" id="3_m5ldd"]
 
 [node name="Area" type="Node2D"]
 script = ExtResource("1_7nle5")
 ownerPlayerIndex = null
 buildingNumber = null
+buildings = null
 resources = null
 
-[node name="VisualBody" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 128, 0, 128, 96, 0, 96)
+[node name="VisualPolygon" parent="." instance=ExtResource("2_a5ovh")]
 
-[node name="BorderPolygon" type="Polygon2D" parent="."]
-color = Color(1, 1, 1, 0.32549)
-invert_enabled = true
-invert_border = 4.0
-
-[node name="BuildingContainer" type="Node2D" parent="."]
-
-[node name="BuildingIconPattern" type="Polygon2D" parent="."]
-color = Color(1, 0.934, 0.34, 1)
-invert_border = 4.0
-polygon = PackedVector2Array(4, 0, 8, 0, 11, 1, 12, 4, 12, 8, 11, 11, 8, 12, 4, 12, 1, 11, 0, 8, 0, 4, 1, 1)
+[node name="Buildings" parent="." instance=ExtResource("3_m5ldd")]

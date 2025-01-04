@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://sgknel74vgm"]
+
+[ext_resource type="PackedScene" uid="uid://cli74flx8qv8t" path="res://components/area/buildings/building_icon/building_icon.tscn" id="1_7ya7y"]
+[ext_resource type="Script" path="res://components/area/buildings/buildings.gd" id="1_dowul"]
+
+[node name="Buildings" type="Node2D"]
+script = ExtResource("1_dowul")
+
+[node name="BuildingIconPattern" parent="." instance=ExtResource("1_7ya7y")]
+
+[node name="IconContainer" type="Node2D" parent="."]

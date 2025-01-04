@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cli74flx8qv8t"]
+
+[ext_resource type="Texture2D" uid="uid://behgohapwjixf" path="res://static/military_base.png" id="1_oq34m"]
+[ext_resource type="Script" path="res://components/area/buildings/building_icon/building_icon.gd" id="1_vj10x"]
+
+[node name="BuildingIcon" type="Node2D"]
+script = ExtResource("1_vj10x")
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(1, 0.975, 0.75, 0.686275)
+texture_scale = Vector2(4, 4)
+invert_border = 40.0
+polygon = PackedVector2Array(8, 0, 16, 0, 20, 1, 23, 4, 24, 8, 24, 16, 23, 20, 20, 23, 16, 24, 8, 24, 4, 23, 1, 20, 0, 16, 0, 8, 1, 4, 3, 1, 8, 0)
+
+[node name="BuildingIconPattern" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 0.934, 0.34, 1)
+texture = ExtResource("1_oq34m")
+texture_scale = Vector2(4, 4)
+invert_border = 40.0
+polygon = PackedVector2Array(8, 0, 16, 0, 20, 1, 23, 4, 24, 8, 24, 16, 23, 20, 20, 23, 16, 24, 8, 24, 4, 23, 1, 20, 0, 16, 0, 8, 1, 4, 3, 1, 8, 0)

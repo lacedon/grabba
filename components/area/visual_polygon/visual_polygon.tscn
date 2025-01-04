@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cshupupifqerg"]
+
+[ext_resource type="Script" path="res://components/area/visual_polygon/visual_polygon.gd" id="1_a4jex"]
+
+[node name="VisualPolygon" type="Node2D"]
+script = ExtResource("1_a4jex")
+
+[node name="VisualBody" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 256, 0, 256, 128, 0, 128)
+
+[node name="BorderPolygon" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0.32549)
+invert_enabled = true
+invert_border = 4.0
+
+[node name="Grid" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 0.694118)
+polygon = PackedVector2Array(127, 65, 127, 128, 129, 128, 129, 65, 256, 65, 256, 63, 129, 63, 129, 0, 127, 0, 127, 63, 0, 63, 0, 65)

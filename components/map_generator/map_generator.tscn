@@ -9,62 +9,62 @@ ownerPlayerIndex = 0
 buildingNumber = 3
 
 [node name="Area2" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(128, 0)
+position = Vector2(256, 0)
 buildingNumber = 2
 
 [node name="Area3" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(256, 0)
+position = Vector2(512, 0)
 buildingNumber = 1
 
 [node name="Area4" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(384, 0)
+position = Vector2(768, 0)
 buildingNumber = 1
 
 [node name="Area5" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(0, 96)
+position = Vector2(0, 128)
 buildingNumber = 3
 
 [node name="Area6" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(128, 96)
+position = Vector2(256, 128)
 buildingNumber = 2
 
 [node name="Area7" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(256, 96)
+position = Vector2(512, 128)
 buildingNumber = 1
 
 [node name="Area8" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(384, 96)
+position = Vector2(768, 128)
 buildingNumber = 2
 
 [node name="Area9" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(0, 192)
+position = Vector2(0, 256)
 buildingNumber = 2
 
 [node name="Area10" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(128, 192)
+position = Vector2(256, 256)
 buildingNumber = 1
 
 [node name="Area11" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(256, 192)
+position = Vector2(512, 256)
 buildingNumber = 2
 
 [node name="Area12" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(384, 192)
+position = Vector2(768, 256)
 buildingNumber = 3
 
 [node name="Area13" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(0, 288)
+position = Vector2(0, 384)
 buildingNumber = 1
 
 [node name="Area14" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(128, 288)
+position = Vector2(256, 384)
 buildingNumber = 1
 
 [node name="Area15" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(256, 288)
+position = Vector2(512, 384)
 buildingNumber = 2
 
 [node name="Area16" parent="." instance=ExtResource("1_3nko4")]
-position = Vector2(384, 288)
+position = Vector2(768, 384)
 ownerPlayerIndex = 1
 buildingNumber = 3

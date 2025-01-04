@@ -5,4 +5,4 @@
 [node name="InGame" type="Node2D"]
 
 [node name="MapGenerator" parent="." instance=ExtResource("3_lm22e")]
-position = Vector2(320, 125)
+position = Vector2(56, 56)
