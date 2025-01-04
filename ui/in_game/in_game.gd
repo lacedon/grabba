@@ -5,11 +5,11 @@ func createBuildingButtons():
 	# for building in GameConstants.buildings:
 	# 	pass
 
-# Called when the node enters the scene tree for the first time.
+func test() -> void:
+	prints('test')
+
 func _ready() -> void:
-	pass # Replace with function body.
+	EventEmitter.AddListener(AreaReactivityBody.signal_select_area, self, test)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _exit_tree() -> void:
+	EventEmitter.RemoveListener(AreaReactivityBody.signal_select_area, self, test)
