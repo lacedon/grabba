@@ -1,12 +1,18 @@
 extends Control
 
-func createBuildingButtons():
-	pass
-	# for building in GameConstants.buildings:
-	# 	pass
+@onready var _areaNameField: Label = $Info/AreaName
+@onready var _buildingManager: GameUIBuildingManager = $BuildingManager
+
+func setAreaName(areaName: String) -> void:
+	_areaNameField.text = areaName
 
 func selectArea(area: GameArea) -> void:
-	prints('selectArea', area)
+	if area:
+		setAreaName(area.name)
+		_buildingManager.open(area)
+	else:
+		setAreaName('')
+		_buildingManager.close()
 
 func _ready() -> void:
 	EventEmitter.AddListener(AreaReactivityBody.signal_select_area, self, selectArea)

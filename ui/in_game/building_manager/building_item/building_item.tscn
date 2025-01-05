@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmt8w8fyvn2ko"]
+
+[ext_resource type="Texture2D" uid="uid://cv1pf8rubs3j7" path="res://static/plus.svg" id="1_by2ky"]
+[ext_resource type="Script" path="res://ui/in_game/building_manager/building_item/building_item.gd" id="2_0hpgr"]
+
+[node name="BuildingItem" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Build..."
+icon = ExtResource("1_by2ky")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_0hpgr")
+
+[node name="Container" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0051, 1)
+alignment = 1
+
+[node name="IconContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Container/IconContainer"]
+layout_mode = 2
+texture = ExtResource("1_by2ky")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/HBoxContainer"]
+layout_mode = 2
+text = "Build..."

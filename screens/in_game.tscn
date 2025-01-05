@@ -6,7 +6,5 @@
 [node name="InGame" type="Node"]
 
 [node name="MapGenerator" parent="." instance=ExtResource("3_lm22e")]
-position = Vector2(56, 56)
 
 [node name="InGame" parent="." instance=ExtResource("2_k4quf")]
-visible = false
