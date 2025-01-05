@@ -7,10 +7,6 @@
 
 [node name="Area" type="Node2D"]
 script = ExtResource("1_7nle5")
-ownerPlayerIndex = null
-buildingNumber = null
-buildings = null
-resources = null
 
 [node name="VisualPolygon" parent="." instance=ExtResource("2_a5ovh")]
 

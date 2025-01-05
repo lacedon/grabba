@@ -17,21 +17,24 @@ func _createBuildingIcon(number: int, centerPosition: Vector2, iconPosition: Vec
 	icon.show()
 	return icon
 
-func setBuildingIcons(centerPosition: Vector2, buildingNumber: int):
-	if buildingNumber == 0:
+func setBuildingIcons(centerPosition: Vector2, maxBuildingNumber: int):
+	if maxBuildingNumber == 0:
 		return
 
-	if buildingNumber == 1:
+	if maxBuildingNumber == 1:
 		_buildingIconContainer.add_child(_createBuildingIcon(1, centerPosition))
 
-	var angle: float = PI / (buildingNumber - 1)
-	for buildingIndex in range(buildingNumber):
+	var angle: float = PI / (maxBuildingNumber - 1)
+	for buildingIndex in range(maxBuildingNumber):
 		var icon: Node2D = _createBuildingIcon(
 			buildingIndex + 1,
 			centerPosition,
 			PolygonHelpers.calcPointAroundCircle(centerPosition, BUILDING_ICON_RADIUS, BUILDING_ICON_START_ANGEL + angle * buildingIndex)
 		)
 		_buildingIconContainer.add_child(icon)
+
+func init(area: GameArea, centerPosition: Vector2) -> void:
+	setBuildingIcons(centerPosition, area.maxBuildingNumber)
 
 func _ready() -> void:
 	_buildingIconPattern.hide()

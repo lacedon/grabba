@@ -10,8 +10,9 @@ const AreaResource = preload("res://types/area_resource.gd")
 @onready var _visualBody: AreaVisualPolygon = $VisualPolygon
 @onready var _buildingManager: AreaBuildingManager = $Buildings
 @onready var _reactivityBody: AreaReactivityBody = $ReactivityBody
+@onready var _areaResource: GameArea = GameArea.new(self.name, buildingNumber, buildings)
 
 func _ready():
-	_visualBody.prepare(ownerPlayerIndex)
-	_buildingManager.setBuildingIcons(_visualBody.getCenter(), buildingNumber)
-	_reactivityBody.setPolygons(_visualBody.getPolygons())
+	_visualBody.init(ownerPlayerIndex)
+	_buildingManager.init(_areaResource, _visualBody.getCenter())
+	_reactivityBody.init(_areaResource, _visualBody.getPolygons())

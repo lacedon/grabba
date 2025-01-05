@@ -5,11 +5,11 @@ func createBuildingButtons():
 	# for building in GameConstants.buildings:
 	# 	pass
 
-func test() -> void:
-	prints('test')
+func selectArea(area: GameArea) -> void:
+	prints('selectArea', area)
 
 func _ready() -> void:
-	EventEmitter.AddListener(AreaReactivityBody.signal_select_area, self, test)
+	EventEmitter.AddListener(AreaReactivityBody.signal_select_area, self, selectArea)
 
 func _exit_tree() -> void:
-	EventEmitter.RemoveListener(AreaReactivityBody.signal_select_area, self, test)
+	EventEmitter.RemoveListener(AreaReactivityBody.signal_select_area, self, selectArea)
