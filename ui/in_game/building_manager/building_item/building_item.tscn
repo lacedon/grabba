@@ -16,27 +16,8 @@ vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("2_0hpgr")
 
-[node name="Container" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.0051, 1)
-alignment = 1
+[node name="PopupMenu" type="PopupMenu" parent="."]
+initial_position = 1
 
-[node name="IconContainer" type="HBoxContainer" parent="Container"]
-layout_mode = 2
-alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Container/IconContainer"]
-layout_mode = 2
-texture = ExtResource("1_by2ky")
-stretch_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Container/HBoxContainer"]
-layout_mode = 2
-text = "Build..."
+[connection signal="button_up" from="." to="." method="openPopup"]
+[connection signal="index_pressed" from="PopupMenu" to="." method="select_menu_item"]

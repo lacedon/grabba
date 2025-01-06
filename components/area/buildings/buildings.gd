@@ -10,6 +10,8 @@ const BUILDING_ICON_START_ANGEL: float = 0
 @onready var _buildingIconPattern: AreaBuildingIcon = $BuildingIconPattern
 @onready var _buildingIconHalfSize: Vector2 = _buildingIconPattern.getSize() / 2
 
+var area: GameArea
+
 func _createBuildingIcon(number: int, centerPosition: Vector2, iconPosition: Vector2 = centerPosition) -> Node2D:
 	var icon: Node2D = _buildingIconPattern.duplicate()
 	icon.name = 'BuildingIcon:' + str(number)
@@ -17,7 +19,7 @@ func _createBuildingIcon(number: int, centerPosition: Vector2, iconPosition: Vec
 	icon.show()
 	return icon
 
-func setBuildingIcons(centerPosition: Vector2, maxBuildingNumber: int):
+func createIcons(centerPosition: Vector2, maxBuildingNumber: int) -> void:
 	if maxBuildingNumber == 0:
 		return
 
@@ -33,8 +35,38 @@ func setBuildingIcons(centerPosition: Vector2, maxBuildingNumber: int):
 		)
 		_buildingIconContainer.add_child(icon)
 
-func init(area: GameArea, centerPosition: Vector2) -> void:
-	setBuildingIcons(centerPosition, area.maxBuildingNumber)
+func init(localArea: GameArea, centerPosition: Vector2) -> void:
+	area = localArea
+
+	createIcons(centerPosition, localArea.maxBuildingNumber)
+
+func setBuildingIcon(index: int, building: GameBuilding) -> void:
+	var buildingIcon: AreaBuildingIcon = _buildingIconContainer.get_child(index)
+	buildingIcon.init(building)
+
+func setBuilding(index: int, building: GameBuilding) -> void:
+	if area.buildings[index] != null:
+		prints('[WARN] Cannot build ' + building.name + ' in ' + area.name + '[' + str(index) + ']: Building place is already set')
+		return
+
+	# TODO: Need to put an instance copy here
+	area.buildings[index] = building
+	setBuildingIcon(index, building)
+
+func handleBuilding(localArea: GameArea, buildingIndex: int, building: GameBuilding) -> void:
+	if area != localArea:
+		return
+
+	if area.maxBuildingNumber <= buildingIndex:
+		prints('[WARN] Cannot build ' + building.name + ' in ' + area.name + '[' + str(buildingIndex) + ']: Index is out of maxBuildingNumber')
+		return
+
+	setBuilding(buildingIndex, building)
 
 func _ready() -> void:
 	_buildingIconPattern.hide()
+
+	EventEmitter.AddListener(GameUIBuildingItem.signal_build, self, handleBuilding)
+
+func _exit_tree() -> void:
+	EventEmitter.RemoveListener(GameUIBuildingItem.signal_build, self, handleBuilding)

@@ -14,5 +14,10 @@ func _init(
   maxBuildingNumber = _maxBuildingNumber
   buildings = _buildings
 
+  var buildingCount = buildings.size()
+  for index in range(maxBuildingNumber):
+    if index >= buildingCount:
+      buildings.append(null)
+
 func _to_string() -> String:
   return '<Area#' + str(self.get_instance_id()) + ':' + name + ';' + str(maxBuildingNumber) + '>'

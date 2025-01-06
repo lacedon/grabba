@@ -9,7 +9,9 @@ var units: Dictionary = {
 }
 
 var buildings: Dictionary = {
-  barracks = GameBuilding.new('Barracks', preload("res://static/military_base.png"), [GameBuildingEffectUnitCreation.new('Create footman', [units.footman], 5)] ),
-  archery  = GameBuilding.new('Archery',  preload("res://static/target.png"),        [GameBuildingEffectUnitCreation.new('Create archer', [units.archer], 5)]   ),
-  cave     = GameBuilding.new('Cave',     preload("res://static/cave.png"),          [GameBuildingEffectUnitCreation.new('Create ogre', [units.ogre], 1)]       ),
+  barracks = GameBuilding.new('Barracks', preload("res://static/military_base.png"), [units.footman] ),
+  archery  = GameBuilding.new('Archery',  preload("res://static/target.png"),        [units.archer]   ),
+  cave     = GameBuilding.new('Cave',     preload("res://static/cave.png"),          [units.ogre]       ),
 }
+
+var buildingsAsList = buildings.values()

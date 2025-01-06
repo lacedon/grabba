@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://daah24doevg1r"]
+[gd_scene load_steps=3 format=3 uid="uid://daah24doevg1r"]
 
 [ext_resource type="PackedScene" uid="uid://o6sxdpu2ge0y" path="res://components/area/area.tscn" id="1_3nko4"]
+[ext_resource type="Script" path="res://components/map_generator/map_generator.gd" id="1_wlamx"]
 
 [node name="MapGenerator" type="Node2D"]
+script = ExtResource("1_wlamx")
 
 [node name="Area" parent="." instance=ExtResource("1_3nko4")]
 ownerPlayerIndex = 0

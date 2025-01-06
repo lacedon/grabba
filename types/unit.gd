@@ -21,9 +21,9 @@ func _init(
   _attackSpeed: float,
   _attackDistance: float,
 ) -> void:
-  _name = name
-  _icon = icon
-  _maxHealth = maxHealth
-  _attack = attack
-  _attackSpeed = attackSpeed
-  _attackDistance = attackDistance
+  name = _name
+  icon = _icon
+  maxHealth = _maxHealth
+  attack = _attack
+  attackSpeed = _attackSpeed
+  attackDistance = _attackDistance
