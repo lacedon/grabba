@@ -22,6 +22,9 @@ func init(_buildingIndex: int, _area: GameArea, _building: GameBuilding = null) 
 	area = _area
 	building = _building
 
+	setBuildingData(_building)
+
+func setBuildingData(_building: GameBuilding = null) -> void:
 	name = _building.name if _building else DEFAULT_TITLE
 	icon = _building.icon if _building else DEFAULT_ICON
 
@@ -43,8 +46,11 @@ func select_menu_item(index: int) -> void:
 		prints(order.get_name(), area, building.units[index])
 		emit_signal(order.get_name(), area, building.units[index])
 	else:
-		prints(build.get_name(), area, buildingIndex, GameConstants.buildingsAsList[index])
-		emit_signal(build.get_name(), area, buildingIndex, GameConstants.buildingsAsList[index])
+		var toBuild: GameBuilding = GameConstants.buildingsAsList[index]
+		prints(build.get_name(), area, buildingIndex, toBuild)
+		emit_signal(build.get_name(), area, buildingIndex, toBuild)
+
+		setBuildingData(toBuild)
 
 func _ready() -> void:
 	EventEmitter.AddEmitter(build.get_name(), self)
