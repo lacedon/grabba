@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3rcakn7ft13"]
+[gd_scene load_steps=4 format=3 uid="uid://b3rcakn7ft13"]
 
 [ext_resource type="Script" path="res://ui/in_game/in_game.gd" id="1_jqtnr"]
 [ext_resource type="PackedScene" uid="uid://4kygqvlbl0r5" path="res://ui/in_game/building_manager/building_manager.tscn" id="2_avjm1"]
+[ext_resource type="PackedScene" uid="uid://chyhhxggmxssm" path="res://ui/in_game/unit_manager/unit_manager.tscn" id="3_3gh2r"]
 
 [node name="InGame" type="VBoxContainer"]
 anchors_preset = 15
@@ -20,4 +21,7 @@ layout_mode = 2
 text = "Area name"
 
 [node name="BuildingManager" parent="." instance=ExtResource("2_avjm1")]
+layout_mode = 2
+
+[node name="UnitManager" parent="." instance=ExtResource("3_3gh2r")]
 layout_mode = 2

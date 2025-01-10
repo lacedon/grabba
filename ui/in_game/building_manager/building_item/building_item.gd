@@ -25,7 +25,7 @@ func init(_buildingIndex: int, _area: GameArea, _building: GameBuilding = null) 
 	setBuildingData(_building)
 
 func setBuildingData(_building: GameBuilding = null) -> void:
-	name = _building.name if _building else DEFAULT_TITLE
+	text = _building.name if _building else DEFAULT_TITLE
 	icon = _building.icon if _building else DEFAULT_ICON
 
 func openPopup() -> void:
@@ -43,11 +43,9 @@ func openPopup() -> void:
 
 func select_menu_item(index: int) -> void:
 	if building:
-		prints(order.get_name(), area, building.units[index])
 		emit_signal(order.get_name(), area, building.units[index])
 	else:
 		var toBuild: GameBuilding = GameConstants.buildingsAsList[index]
-		prints(build.get_name(), area, buildingIndex, toBuild)
 		emit_signal(build.get_name(), area, buildingIndex, toBuild)
 
 		setBuildingData(toBuild)

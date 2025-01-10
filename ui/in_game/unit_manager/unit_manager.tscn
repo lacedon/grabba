@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chyhhxggmxssm"]
+
+[ext_resource type="Script" path="res://ui/in_game/unit_manager/unit_manager.gd" id="1_ixmhj"]
+
+[node name="UnitManager" type="HBoxContainer"]
+script = ExtResource("1_ixmhj")

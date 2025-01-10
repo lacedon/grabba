@@ -17,9 +17,19 @@ func addButtons(area: GameArea) -> void:
 	for index in range(area.maxBuildingNumber):
 		add_child(createBuildingButton(index, area, area.buildings[index] if index < buildedBuildingsCount else null))
 
+func addEmptyView() -> void:
+	var button: GameUIBuildingItem = createBuildingButton(0, null, null)
+	button.disabled = true
+
+	add_child(button)
+
 func open(area: GameArea) -> void:
 	clearButtons()
 	addButtons(area)
 
 func close() -> void:
 	clearButtons()
+	addEmptyView()
+
+func _ready() -> void:
+	addEmptyView()

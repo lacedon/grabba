@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djthyuxnpatkd"]
+
+[ext_resource type="Script" path="res://ui/in_game/unit_manager/unit_item/unit_item.gd" id="1_jehex"]
+[ext_resource type="Texture2D" uid="uid://cv1pf8rubs3j7" path="res://static/plus.svg" id="1_yx4b0"]
+
+[node name="UnitItem" type="Button"]
+text = "Hire"
+icon = ExtResource("1_yx4b0")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("1_jehex")
