@@ -8,6 +8,7 @@ const BORDER_SIZE: int = 4
 
 @onready var _visualBodyPolygon: Polygon2D = $VisualBody
 @onready var _borderPolygon: Polygon2D = $BorderPolygon
+@onready var _gridPolygon: Polygon2D = $Grid
 
 func setUpBorder() -> void:
   _borderPolygon.polygon = Geometry2D.offset_polygon(_visualBodyPolygon.polygon, -BORDER_SIZE)[0]
@@ -19,6 +20,9 @@ func setColor(ownerPlayerIndex: int) -> void:
   else:
     _visualBodyPolygon.color = DEFAULT_COLOR
 
+func getSize() -> Vector2:
+  return PolygonHelpers.calcPolygonSize(_visualBodyPolygon)
+
 func getCenter() -> Vector2:
   return PolygonHelpers.calcPolygonCenter(_visualBodyPolygon)
 
@@ -28,3 +32,7 @@ func getPolygons() -> PackedVector2Array:
 func init(ownerPlayerIndex: int = -1) -> void:
   setUpBorder()
   setColor(ownerPlayerIndex)
+
+func setMainIcon(mainPosition: Vector2) -> void:
+  var gridPolygonSize: Vector2 = PolygonHelpers.calcPolygonSize(_gridPolygon)
+  _gridPolygon.position = mainPosition - gridPolygonSize / 2

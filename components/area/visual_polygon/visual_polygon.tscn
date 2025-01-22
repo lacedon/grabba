@@ -15,4 +15,5 @@ invert_border = 4.0
 
 [node name="Grid" type="Polygon2D" parent="."]
 color = Color(1, 0, 0, 0.694118)
-polygon = PackedVector2Array(127, 65, 128, 128, 129, 65, 256, 64, 129, 63, 128, 0, 127, 63, 0, 64)
+offset = Vector2(-110, -51)
+polygon = PackedVector2Array(127, 65, 128, 78, 129, 65, 144, 64, 129, 63, 128, 51, 127, 63, 110, 64, 122.825, 64.7544)
